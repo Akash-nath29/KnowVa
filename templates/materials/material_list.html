@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="material-container mt-5">
+    <h2 class="text-center mb-4 fw-bold">📚 Study Materials</h2>
+
+    {% if materials %}
+    <div class="row">
+        {% for material in materials %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card shadow-lg border-0 rounded-3 bg-light p-3 transition">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{{ material.file.url }}" class="text-decoration-none text-dark fw-bold"
+                            target="_blank">
+                            {{ material.title }}
+                        </a>
+                    </h5>
+                    <p class="card-text text-secondary">
+                        Uploaded by: <strong class="text-dark">{{ material.uploaded_by }}</strong>
+                    </p>
+                    <a href="{% url 'material-detail' material.id %}" class="btn btn-primary w-100">
+                        📂 View Material
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-muted text-center">No materials available yet. Be the first to upload! 📤</p>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="{% url 'upload-material' %}" class="btn btn-lg btn-success fw-bold">
+            + Upload New Material
+        </a>
+    </div>
+</div>
+
+<style>
+    .material-container {
+        height: 70vh;
+    }
+    .transition {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .transition:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        border: 2px solid #007bff;
+    }
+</style>
+{% endblock %}

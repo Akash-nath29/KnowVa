@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="upload-container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4 p-4">
+                <h2 class="text-center fw-bold mb-4">📤 Upload Study Material</h2>
+
+                <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="id_title" class="form-label fw-semibold">Material Title</label>
+                        {{ form.title }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_file" class="form-label fw-semibold">Upload File</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="id_file" name="file" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2">
+                        🚀 Upload Material
+                    </button>
+                </form>
+
+                <div class="text-center mt-3">
+                    <a href="{% url 'material-list' %}" class="btn btn-outline-secondary">
+                        ⬅ Back to Study Materials
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .upload-container {
+        height: 70vh;
+    }
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    input[type="file"] {
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
