@@ -18,7 +18,7 @@ def upload_material(request):
             material = form.save(commit=False)
             material.uploaded_by = request.user
             material.save()
-            return redirect("materials-list")
+            return redirect("material-list")
     else:
         form = MaterialUploadForm()
     return render(request, "materials/upload_material.html", {"form": form})

@@ -4,7 +4,7 @@
 <div class="upload-container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card shadow-lg border-0 rounded-4 p-4">
+            <div class="card shadow-lg border-0 rounded-4 p-4 bg-dark text-white">
                 <h2 class="text-center fw-bold mb-4">📤 Upload Study Material</h2>
 
                 <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -18,11 +18,11 @@
                     <div class="mb-3">
                         <label for="id_file" class="form-label fw-semibold">Upload File</label>
                         <div class="input-group">
-                            <input type="file" class="form-control" id="id_file" name="file" required>
+                            <input type="file" class="form-control bg-dark text-white border-secondary" id="id_file" name="file" required>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2">
+                    <button type="submit" class="btn btn-outline-primary w-100 fw-bold py-2">
                         🚀 Upload Material
                     </button>
                 </form>
@@ -38,25 +38,52 @@
 </div>
 
 <style>
+    /* Global Dark Mode */
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        overflow-x: hidden;
+    }
+
     .upload-container {
-        height: 70vh;
+        min-height: 75vh;
     }
+
     .card {
-        background-color: #f9f9f9;
-        border-radius: 10px;
+        background-color: #1e1e1e;
+        border-radius: 12px;
     }
 
-    .btn-primary {
-        background-color: #007bff;
-        border: none;
+    .form-control {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+        border: 1px solid #444;
     }
 
-    .btn-primary:hover {
-        background-color: #0056b3;
+    .form-control:focus {
+        background-color: #333;
+        color: #fff;
+        border-color: #007bff;
+        box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
     }
 
     input[type="file"] {
         cursor: pointer;
     }
+
+    .btn-outline-primary {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #6c757d;
+        color: white;
+    }
 </style>
+
 {% endblock %}

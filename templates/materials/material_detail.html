@@ -2,29 +2,26 @@
 
 {% block content %}
 <div class="view-container mt-5">
-    <div class="card shadow-lg border-0 rounded-4">
+    <div class="card shadow-lg border-0 rounded-4 bg-dark text-white">
         <div class="card-body p-4">
             <!-- Material Title -->
-            <h2 class="fw-bold text-primary">{{ material.title }}</h2>
+            <h2 class="fw-bold text-info">{{ material.title }}</h2>
 
             <!-- Uploaded by -->
-            <p class="text-muted">
+            <p class="text-white">
                 <i class="fas fa-user me-2"></i> Uploaded by 
-                <strong class="text-dark">{{ material.uploaded_by.username }}</strong>
+                <strong class="text-light">{{ material.uploaded_by.username }}</strong>
             </p>
-            <hr>
+            <hr class="border-secondary">
 
             <!-- File Preview -->
             <div class="file-preview mb-4">
                 {% if material.file.url|lower|slice:"-4:" == ".pdf" %}
-                    <!-- PDF Preview -->
-                    <!-- <iframe src="{{ material.file.url }}" width="100%" height="500px" class="border rounded"></iframe> -->
+                    <iframe src="{{ material.file.url }}" width="100%" height="500px" class="border rounded"></iframe>
                 {% elif material.file.url|lower|slice:"-4:" in ".jpg .png .jpeg" %}
-                    <!-- Image Preview -->
                     <img src="{{ material.file.url }}" alt="Material Preview" class="img-fluid border rounded">
                 {% elif material.file.url|lower|slice:"-4:" == ".txt" %}
-                    <!-- Text File Preview -->
-                    <pre class="border p-3 bg-light rounded">{{ material.file.read|truncatewords:100 }}</pre>
+                    <pre class="border p-3 bg-secondary text-white rounded">{{ material.file.read|truncatewords:100 }}</pre>
                 {% else %}
                     <p class="text-muted">Preview not available for this file type.</p>
                 {% endif %}
@@ -32,10 +29,10 @@
 
             <!-- Action Buttons -->
             <div class="d-flex flex-wrap gap-3">
-                <a href="{{ material.file.url }}" class="btn btn-success px-4">
+                <a href="{{ material.file.url }}" class="btn btn-outline-success px-4">
                     <i class="fas fa-download me-2"></i> Download
                 </a>
-                <a href="{% url 'material-list' %}" class="btn btn-outline-secondary px-4">
+                <a href="{% url 'material-list' %}" class="btn btn-outline-light px-4">
                     <i class="fas fa-arrow-left me-2"></i> Back to List
                 </a>
             </div>
@@ -54,8 +51,32 @@
 </div>
 
 <style>
+    /* Full Dark Mode Styling */
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
     .view-container {
-        height: 70vh;
+        min-height: 75vh;
+    }
+
+    .card {
+        background-color: #1e1e1e;
+        border-radius: 12px;
+    }
+
+    .border-secondary {
+        border-color: #444 !important;
+    }
+
+    .btn {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #f8f9fa;
+        color: #000;
     }
 
     .reaction-btn {
