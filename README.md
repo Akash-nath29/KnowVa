@@ -1,6 +1,8 @@
 # KnowVa
+### Elevate your Learning
 
 Project for BCT 4th Sem, 2025
+
 ![{5095E929-1347-4F45-AB14-E66AB1B6319B}](https://github.com/user-attachments/assets/22c3f4d9-2e19-4340-aad5-35f9dd7df5a3)
 
 ## Description
@@ -29,10 +31,14 @@ To get started with KnowVa, follow these steps:
 
 Instructions on how to use the project:
 
-1. Open the HTML files in your browser to view the project.
-2. Run any Python scripts by executing:
+1. Migrate the database
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+3. Run the server with:
     ```bash
-    python script_name.py
+    python manage.py runserver
     ```
 
 ## Contributing
@@ -56,7 +62,7 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## License
 
-This project does not currently have a license.
+This project is under [MIT LICENSE](LICENSE)
 
 ## Contact
 
