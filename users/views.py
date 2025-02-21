@@ -53,5 +53,5 @@ def edit_profile(request):
         user.last_name = request.POST.get("last_name", user.last_name)
         user.email = request.POST.get("email", user.email)
         user.save()
-        return redirect("profile")  # Redirect to profile page after update
+        return redirect("profile")
     return render(request, "users/profile.html")
