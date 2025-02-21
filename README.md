@@ -1,6 +1,7 @@
 # KnowVa
 
 Project for BCT 4th Sem, 2025
+![{5095E929-1347-4F45-AB14-E66AB1B6319B}](https://github.com/user-attachments/assets/22c3f4d9-2e19-4340-aad5-35f9dd7df5a3)
 
 ## Description
 
