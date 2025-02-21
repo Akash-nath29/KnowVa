@@ -3,7 +3,7 @@
 
 Project for BCT 4th Sem, 2025
 
-![{5095E929-1347-4F45-AB14-E66AB1B6319B}](https://github.com/user-attachments/assets/22c3f4d9-2e19-4340-aad5-35f9dd7df5a3)
+![{FF6D0EFE-CDAA-4C23-90EC-C3D0E320A04C}](https://github.com/user-attachments/assets/442a83fc-d968-442c-b325-781ddd62529b)
 
 ## Description
 
